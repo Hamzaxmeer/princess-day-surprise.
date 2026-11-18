@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Princess Day Surprise 👑</title>
+<style>
+body{margin:0;font-family:system-ui;text-align:center;background:#ffe6f2;color:#7a1038;overflow:hidden}
+.card{margin:60px 20px;background:white;border-radius:25px;padding:30px 20px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+h1{font-size:32px} p{font-size:18px}
+button{background:#ff4d8d;color:white;border:0;padding:14px 26px;font-size:18px;border-radius:30px}
+#msg{display:none;font-size:20px;margin-top:20px}
+.heart{position:fixed;top:-20px;animation:fall 3s linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>👑 Happy Princess Day 👑</h1>
+<p>Today is all about YOU, my princess! 💖</p>
+<p>You are loved, you are beautiful, you are magical ✨</p>
+<button onclick="surprise()">Tap for Surprise 🎀</button>
+<div id="msg">💖 You are the prettiest princess in the whole world! 💖<br><br>🎁 Your surprise: A big hug, lots of love, and a perfect day made just for you! 👑✨</div>
+</div>
+<script>
+function surprise(){
+document.getElementById('msg').style.display='block';
+for(let i=0;i<30;i++){
+let s=document.createElement('div');s.className='heart';s.innerHTML='💖';
+s.style.left=Math.random()*100+'vw';s.style.fontSize=(20+Math.random()*20)+'px';
+s.style.animationDelay=(Math.random()*1)+'s';document.body.appendChild(s);
+}}
+</script>
+</body>
+</html>
